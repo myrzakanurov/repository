@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>List of all Documents: </h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Upload Time</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for document in documents %}
+                <tr>
+                    <td><a href="{{ document.id }}">{{ document.id }}</a></td>
+                    <td>{{ document.title }}</td>
+                    <td>{{ document.description }}</td>
+                    <td>{{ document.upload_time }}</td>
+                    <td><a href="/media/{{ document.data_file }}" class="btn btn-warning">Download File</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{#    <ol>#}
+{#        {% for document in documents %}#}
+{#            <li><a href="{{ document.id }}">{{ document.title }}</a></li>#}
+{#        {% endfor %}#}
+{#    </ol>#}
+{% endblock %}

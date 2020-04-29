@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="jumbotron">
+                <h1>Document details:</h1>
+                <h2>{{ documents_detail.title }}</h2>
+                <p>{{ documents_detail.description }}</p>
+                <p>Upload time: {{ documents_detail.upload_time }}</p>
+                <p>Author: {{ documents_detail.author }}</p>
+                <a href="/media/{{ documents_detail.data_file }}" class="btn btn-warning">
+                    Download File
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
